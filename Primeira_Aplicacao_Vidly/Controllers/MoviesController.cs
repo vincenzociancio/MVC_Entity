@@ -14,6 +14,7 @@ namespace Primeira_Aplicacao_Vidly.Controllers
         {
             var movie = new Movie() {name = "Catch me if you can"};
 
+
             //     ViewData["RandomMovie"] = movie;
             //     ViewBag.RandomMovie = movie;
 
