@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+
 namespace Primeira_Aplicacao_Vidly.Controllers
 {
     public class HomeController : Controller

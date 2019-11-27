@@ -23,7 +23,7 @@ namespace Primeira_Aplicacao_Vidly
                       "~/Scripts/bootstrap.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap-Lumen.css",
+                      "~/Content/bootstrap.css",
                       "~/Content/site.css"));
         }
     }

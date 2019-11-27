@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Primeira_Aplicacao_Vidly.Models;
+using Primeira_Aplicacao_Vidly.ViewModels;
 
 namespace Primeira_Aplicacao_Vidly.Controllers
 {
@@ -12,21 +13,22 @@ namespace Primeira_Aplicacao_Vidly.Controllers
         // GET: Movies
         public ActionResult Random()
         {
-            var movie = new Movie() {name = "Catch me if you can"};
-
-
-            //     ViewData["RandomMovie"] = movie;
-            //     ViewBag.RandomMovie = movie;
-
-            var viewResult = new ViewResult();
-
-            return View(movie);
-
-            // return Content("blablablahblabhlabhlabhlabhla");
-
-            // return new EmptyResult();
-
-           // return RedirectToAction("Index", "Home", new {page = 1, sortBy = "name"});
+    /*        var movie = new Movie() {name = "Catch me if you can"};
+ 
+            var customer = new List<Customer>
+            {
+                new Customer { Name = "José das Couves"},
+                new Customer { Name = "Joáo da alface"}
+            };
+            
+            var viewModel = new RandomMovieViewModel
+            {
+                Movie = movie,
+                Customers = customer
+            };
+ */
+            return View();
+           
         }
 
         public ActionResult Edit(int id = 1)
@@ -36,19 +38,41 @@ namespace Primeira_Aplicacao_Vidly.Controllers
 
         public ActionResult Index(int? pageIndex, string sortBy)
         {
-            if (!pageIndex.HasValue)
-                pageIndex = 1;
+            var movies = GetMovies();
+            return View(movies);
+            /*     if (!pageIndex.HasValue)
+                     pageIndex = 1;
 
-            if (String.IsNullOrWhiteSpace(sortBy))
-                sortBy = "name";
+                 if (String.IsNullOrWhiteSpace(sortBy))
+                     sortBy = "name";
 
-            return Content(string.Format("pageindex= {0}&sortBy= {1}", pageIndex, sortBy));
+                 return Content(string.Format("pageindex= {0}&sortBy= {1}", pageIndex, sortBy));
+                 */
         }
 
         [Route("movies/released/{year}/{month:regex(\\d{2}):range(1,12)}")]
         public ActionResult ByReleaseDate(int year, int month  )
         {
             return Content(year + "/" + month );
+        }
+
+        public ActionResult Details(int id)
+        {
+            var movies = GetMovies().SingleOrDefault(c => c.id == id);
+
+            if (movies == null)
+                return HttpNotFound();
+
+            return View(movies);
+        }
+
+        private IEnumerable<Movie> GetMovies()
+        {
+            return new List<Movie>
+                {
+                new Movie { name = "Catch me if you can", id = 0},
+                new Movie { name = "The Wolf of Wall Street", id = 1}
+               };
         }
     }
 }

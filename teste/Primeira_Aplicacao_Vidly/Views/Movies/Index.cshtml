@@ -1,0 +1,18 @@
+﻿@model IEnumerable<Primeira_Aplicacao_Vidly.Models.Movie>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<table class=“table table-bordered table-hover”>
+    <h2>Filmes</h2>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th>
+                @Html.ActionLink(@item.name, "Details", "Movies", new { id = @item.id }, null)
+            </th>
+        </tr>
+
+    }
+</table>

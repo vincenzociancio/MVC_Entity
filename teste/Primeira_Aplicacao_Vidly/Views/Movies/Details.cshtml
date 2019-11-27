@@ -1,0 +1,18 @@
+﻿@model Primeira_Aplicacao_Vidly.Models.Movie
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+ 
+
+@if (Model == null)
+{
+    <p>Modelo vazio.</p>
+}
+else
+{
+    <h2>Detalhes Filmes</h2>
+
+    @Model.name
+}

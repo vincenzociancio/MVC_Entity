@@ -1,0 +1,23 @@
+﻿@model Primeira_Aplicacao_Vidly.Models.Customer
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (Model == null)
+{
+    <p>Modelo vazio.</p>
+}
+else
+{
+
+    <h1>@Model.name</h1>
+    <ol>
+        <li>
+            Tipo Conta: @Model.membershipType.Name
+        </li>
+        <li>
+            Data Nascimento: @Model.BirthDate.Value.Date.ToString("dd/MM/yyyy");
+        </li>
+    </ol>
+}
