@@ -1,0 +1,17 @@
+﻿@model Primeira_Aplicacao_Vidly.Models.Movie
+
+@{ViewBag.Title = "New";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Cadastrar Filme</h2>
+
+@using (Html.BeginForm("Create", "Controller"))
+{
+    <div class="form-group">
+        @Html.LabelFor(c => c.name)
+        @Html.TextBoxFor(c => c.name, new { @class = "form-control" })
+    </div>
+   
+}
+

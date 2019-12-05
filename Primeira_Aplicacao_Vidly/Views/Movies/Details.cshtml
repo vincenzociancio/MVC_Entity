@@ -6,13 +6,10 @@
 
  
 
-@if (Model == null)
-{
-    <p>Modelo vazio.</p>
-}
-else
-{
-    <h2>Detalhes Filmes</h2>
-
-    @Model.name
-}
+<h2>@Model.name</h2>
+<ul>
+    <li>Genre: @Model.genre.genre</li>
+    <li>Release Date: @Model.releaseDate.ToLongDateString()</li>
+    <li>Date Added: @Model.addDate.ToLongDateString()</li>
+    <li>Number in Stock: @Model.stock</li>
+</ul>

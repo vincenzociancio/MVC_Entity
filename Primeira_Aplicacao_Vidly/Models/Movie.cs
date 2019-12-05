@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.ComponentModel.DataAnnotations;
 
 namespace Primeira_Aplicacao_Vidly.Models
 {
@@ -9,6 +10,14 @@ namespace Primeira_Aplicacao_Vidly.Models
     {
         public int id { get; set; }
         public string name { get; set; }
-        //public List<Customer> customers { get; set; }
+        [Required]
+        public Genre genre { get; set; }
+        [Required]
+        public DateTime releaseDate { get; set; }
+        [Required]
+        public DateTime addDate { get; set; }
+        [Required]
+        public int stock { get; set; }       
+
     }
 }

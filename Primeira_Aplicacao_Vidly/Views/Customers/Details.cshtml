@@ -16,8 +16,10 @@ else
         <li>
             Tipo Conta: @Model.membershipType.Name
         </li>
-        <li>
-            Data Nascimento: @Model.BirthDate.Value.Date.ToString("dd/MM/yyyy");
-        </li>
+            @if (Model.BirthDate.HasValue) {
+             <li>
+                Data Nascimento: @Model.BirthDate.Value.Date.ToString("dd/MM/yyyy");
+             </li>
+            }        
     </ol>
 }

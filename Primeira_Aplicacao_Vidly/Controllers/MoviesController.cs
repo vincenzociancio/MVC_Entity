@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Data.Entity;
 using Primeira_Aplicacao_Vidly.Models;
 using Primeira_Aplicacao_Vidly.ViewModels;
 
@@ -10,10 +11,27 @@ namespace Primeira_Aplicacao_Vidly.Controllers
 {
     public class MoviesController : Controller
     {
+        private ApplicationDbContext _context;
+
+        public MoviesController()
+        {
+            _context = new ApplicationDbContext();
+        }
+
+        protected override void Dispose(bool Disposed)
+        {
+            _context.Dispose();
+        }
+
+        public ActionResult New()
+        {
+            return View();
+        }
+
         // GET: Movies
         public ActionResult Random()
         {
-    /*        var movie = new Movie() {name = "Catch me if you can"};
+    /*      var movie = new Movie() {name = "Catch me if you can"};
  
             var customer = new List<Customer>
             {
@@ -25,10 +43,9 @@ namespace Primeira_Aplicacao_Vidly.Controllers
             {
                 Movie = movie,
                 Customers = customer
-            };
- */
-            return View();
-           
+            }; */
+
+            return View();          
         }
 
         public ActionResult Edit(int id = 1)
@@ -38,7 +55,8 @@ namespace Primeira_Aplicacao_Vidly.Controllers
 
         public ActionResult Index(int? pageIndex, string sortBy)
         {
-            var movies = GetMovies();
+            var movies = _context.movies.Include(c => c.genre).ToList() ;
+                
             return View(movies);
             /*     if (!pageIndex.HasValue)
                      pageIndex = 1;
@@ -58,21 +76,22 @@ namespace Primeira_Aplicacao_Vidly.Controllers
 
         public ActionResult Details(int id)
         {
-            var movies = GetMovies().SingleOrDefault(c => c.id == id);
-
-            if (movies == null)
-                return HttpNotFound();
+            var movies = _context.movies.Include(c => c.genre).SingleOrDefault(c => c.id == id);
+            
+               if (movies == null)
+                   return HttpNotFound();
 
             return View(movies);
         }
 
-        private IEnumerable<Movie> GetMovies()
+   /*     private IEnumerable<Movie> GetMovies()
         {
             return new List<Movie>
                 {
                 new Movie { name = "Catch me if you can", id = 0},
                 new Movie { name = "The Wolf of Wall Street", id = 1}
                };
-        }
+        } */
     }
+   
 }

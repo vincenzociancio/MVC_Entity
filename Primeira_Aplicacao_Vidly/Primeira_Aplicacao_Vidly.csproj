@@ -249,9 +249,38 @@
     <Compile Include="Migrations\201911272138417_testeXXX.Designer.cs">
       <DependentUpon>201911272138417_testeXXX.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201911281500078_Genre.cs" />
+    <Compile Include="Migrations\201911281500078_Genre.Designer.cs">
+      <DependentUpon>201911281500078_Genre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911281509036_Genre1.cs" />
+    <Compile Include="Migrations\201911281509036_Genre1.Designer.cs">
+      <DependentUpon>201911281509036_Genre1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911281515373_Genre2.cs" />
+    <Compile Include="Migrations\201911281515373_Genre2.Designer.cs">
+      <DependentUpon>201911281515373_Genre2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911281518213_Genre3.cs" />
+    <Compile Include="Migrations\201911281518213_Genre3.Designer.cs">
+      <DependentUpon>201911281518213_Genre3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911281519289_PopulateGenres.cs" />
+    <Compile Include="Migrations\201911281519289_PopulateGenres.Designer.cs">
+      <DependentUpon>201911281519289_PopulateGenres.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911281522084_PopulateMovies.cs" />
+    <Compile Include="Migrations\201911281522084_PopulateMovies.Designer.cs">
+      <DependentUpon>201911281522084_PopulateMovies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912021417274_Genre4.cs" />
+    <Compile Include="Migrations\201912021417274_Genre4.Designer.cs">
+      <DependentUpon>201912021417274_Genre4.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MembershipType.cs" />
@@ -325,6 +354,7 @@
     <Content Include="Views\Customers\Details.cshtml" />
     <Content Include="Views\Movies\Index.cshtml" />
     <Content Include="Views\Movies\Details.cshtml" />
+    <Content Include="Views\Movies\New.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -393,6 +423,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201911272138417_testeXXX.resx">
       <DependentUpon>201911272138417_testeXXX.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911281500078_Genre.resx">
+      <DependentUpon>201911281500078_Genre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911281509036_Genre1.resx">
+      <DependentUpon>201911281509036_Genre1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911281515373_Genre2.resx">
+      <DependentUpon>201911281515373_Genre2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911281518213_Genre3.resx">
+      <DependentUpon>201911281518213_Genre3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911281519289_PopulateGenres.resx">
+      <DependentUpon>201911281519289_PopulateGenres.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911281522084_PopulateMovies.resx">
+      <DependentUpon>201911281522084_PopulateMovies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912021417274_Genre4.resx">
+      <DependentUpon>201912021417274_Genre4.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

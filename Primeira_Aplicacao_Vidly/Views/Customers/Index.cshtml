@@ -4,25 +4,24 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <h2>Clientes</h2>
-<table class=“table table-bordered table-hover”  0>
-    <tr>
-        <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Clientes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-        <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tipo de Assinatura&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-    </tr>
-    @foreach (var item in Model)
-    {
-
+<table class="table table-bordered table-hover">
+    <thead>
         <tr>
-            <td>
-                @Html.ActionLink(@item.name, "Details", "Customers", new { id = @item.id }, null)
-            </td>
-            <td>
-                @Html.ActionLink(@item.membershipType.Name, "Details", "Customers", new { id = @item.id }, null)
-            </td>
+            <th>Clientes</th>
+            <th>Tipo de Conta</th>
         </tr>
-
-    }
+    </thead>
+    <tbody>
+        @foreach (var customer in Model)
+        {
+            <tr>
+                <td>@Html.ActionLink(customer.name, "Details", "Customers", new { id = customer.id }, null)</td>
+                <td>@customer.membershipType.Name</td>
+            </tr>
+        }
+    </tbody>
 </table>
+ 
 
 
 
